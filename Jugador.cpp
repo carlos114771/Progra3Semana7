@@ -2,6 +2,7 @@
 #include "Propiedad.h"
 #include <string>
 #include <vector>
+#include <iostream>
 
 
 using namespace std;
@@ -11,8 +12,8 @@ bool Jugador::hasPropertyMonopoly(Propiedad* prop){
 	string color =prop->getColor();
 	int contador=0;
 	for (int i = 0; i < casillas.size(); ++i){
-		Propiedad contar = dynamic_cast<Propiedad*>(casillas[i]);
-		if(contar!= NULL){
+		Propiedad* contar = dynamic_cast<Propiedad*>(casillas[i]);
+		if(contar != NULL){
 			//comparar la variable color  el color contar
 			if(color.compare(contar->getColor())==0){
 				contador++;

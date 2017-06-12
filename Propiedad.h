@@ -1,4 +1,5 @@
 #include "Casillas.h"
+#include "Print.h"
 #include <iostream>
 #ifndef PROPIEDAD_H
 #define PROPIEDAD_H
@@ -8,6 +9,7 @@ using namespace std;
 
 class Propiedad: public Casillas{
 	private:
+		friend class Print;
 		bool libre; //indica si la casilla no tiene dueño
 		double precio;//informacion para venderla
 		//informacion para calcular renta
@@ -33,10 +35,11 @@ class Propiedad: public Casillas{
 			char buffer[256];
 			in.getline(buffer,256);
 			propiedad.nombre=buffer;
-			//in.getline(propiedad.nombre,256);
+			
 			in>>propiedad.color;
 			in>>propiedad.precio;
 			in>>propiedad.rentaNormal;
+			in>>propiedad.rentaTodas;
 			in>>propiedad.rentaUnaCasa;
 			in>>propiedad.rentaDosCasas;
 			in>>propiedad.rentaTresCasas;

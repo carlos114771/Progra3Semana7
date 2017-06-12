@@ -5,7 +5,7 @@
 #include <fstream>
 using namespace std;
 Tablero::Tablero(){
-	ifstream fileCasillas("Casillas.txt");
+	ifstream fileCasillas("Propiedades.txt");
 	if(fileCasillas.is_open()){
 		for (int i = 0; i < 6; ++i){//leer las casillas
 			Propiedad* casilla = new Propiedad();

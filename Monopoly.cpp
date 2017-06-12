@@ -4,13 +4,24 @@
 #include "Juego.h"
 #include "Jugador.h"
 #include "Tablero.h"
+#include "Tarjetas.h"
+#include "TirarDados.h"
+#include "Print.h"
 
 #include <iostream>
 #include <fstream>
 using namespace std;
 
 int main(){
-	Casillas* c = new Propiedad();
+
+	Juego* juego = new Juego();
+	int retval=juego->jugar();
+	delete juego;
+
+
+
+
+	/*Casillas* c = new Propiedad();
 
 	//c->vender();
 
@@ -50,6 +61,6 @@ int main(){
 	delete player;
 	delete uno;
 	delete dos;
-
+*/
 	return 0;
 }

@@ -2,7 +2,7 @@
 #define JUGADOR_H
 #include "Casillas.h"
 #include "Propiedad.h"
-
+#include "Print.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -10,6 +10,7 @@ using namespace std;
 
 class Jugador{
 	private:
+		friend class Print;
 		string pieza;
 		vector<Casillas*> casillas;
 		double dinero;

@@ -1,5 +1,8 @@
 #include "Juego.h"
 #include "Propiedad.h"
+#include "Tablero.h"
+#include "Print.h"
+#include "Tarjetas.h"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -40,7 +43,7 @@ int Juego::jugar(){
 	for (int i = 0; i < jugadores.size(); ++i){
 		posiciones.push_back(1);
 	}
-
+	Print print;
 	while(true){
 		//determinar turno
 		Jugador* jugadorActual=NULL;
@@ -66,7 +69,10 @@ int Juego::jugar(){
 
 		Casillas* casillaActual=tablero->getCasillas(nuevaCasilla);
 		if(casillaActual!=NULL){
+			cout<<"El Jugador Cayo en: "<<endl;
+			print.printCasilla(casillaActual);
 			//determinar tipo de casilla
+			cin.get();
 			if(typeid(*casillaActual)==typeid(Propiedad)){
 				Propiedad* propiedad = dynamic_cast<Propiedad*>(casillaActual);
 				if(propiedad->estaLibre()){//si esta libre el jugardor compra
@@ -91,7 +97,7 @@ int Juego::jugar(){
 					}else{
 						//determinar de quien es
 						//determila renta
-						double renta= 
+						//double renta= 
 						//pagar la renta
 					}
 				}
